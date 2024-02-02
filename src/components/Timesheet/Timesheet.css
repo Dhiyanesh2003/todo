@@ -1,0 +1,164 @@
+* {
+    font-family: Arial !important;
+}
+
+.timesheet {
+    padding: 20px;
+    /* transition: all 2s ease-in-out; */
+}
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.head i {
+    font-size: 30px;
+    margin: 5px 10px 0px 0px;
+    cursor: pointer;
+}
+
+.head h1 {
+    color: #19105B;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.top-desc {
+    margin-top: 13px;
+}
+
+.top-desc p {
+    font-weight: bold;
+    color: #19105B;
+    font-size: 13px;
+}
+
+.date-range {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.date-range i {
+    color: rgb(141, 141, 141);
+}
+
+.date-range p {
+    color: rgb(87, 87, 87);
+    margin-top: 3px;
+}
+
+.table-head {
+    background: #19105B;
+    color: white;
+    font-size: 13px;
+    align-items: center;
+    display: flex;
+    height: 35px;
+    padding-left: 10px !important;
+}
+
+.table-main {
+    overflow-x: auto;
+}
+
+.table-main table {
+    width: 100%;
+}
+
+.table-main th {
+    background: #FFE5EE;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 16px 10px;
+    color: #19105B !important;
+}
+
+.table-main td {
+    font-size: 13px;
+    color: #6a6c71;
+    padding: 10px 5px;
+}
+
+.table-main select {
+    color: #6a6c71;
+    margin-left: 5%;
+    width: 145px;
+    padding: 9px 0px 9px 7px;
+    border: 1px solid rgb(190, 190, 190);
+    cursor: pointer;
+}
+
+.table-main td:first-child {
+    font-weight: bold;
+    min-width: 104px;
+}
+
+.table-main input[type=number] {
+    text-align: center;
+    color: #6a6c71;
+    margin-left: 5%;
+    width: 50px;
+    padding: 9px 0px;
+    outline: none;
+    border: 1px solid rgb(190, 190, 190);
+}
+
+.table-main input[type=text] {
+    color: #6a6c71;
+    margin-left: 5%;
+    width: 105px;
+    padding: 9px 0px 9px 10px;
+    outline: none;
+    border: 1px solid rgb(190, 190, 190);
+}
+
+.table-main td i {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.table-main tr {
+    border-bottom: 1px solid rgb(219, 219, 219) !important;
+}
+
+.table-main #row1 {
+    border: none !important;
+}
+
+.save-submit {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.save-submit button:first-child {
+    margin-right: 15px;
+    background-color: #19105B !important;
+}
+
+.save-submit button {
+    color: white;
+    background-color: #FF6196 !important;
+    border-radius: 4px;
+    padding: 10px 13px;
+    width: 110px;
+    border: none;
+    font-size: 13px;
+}
+
+.center {
+    text-align: center;
+}
+
+.red{
+    color: red !important;
+}

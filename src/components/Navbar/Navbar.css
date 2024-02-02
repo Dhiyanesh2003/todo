@@ -1,0 +1,58 @@
+.Navbar {
+    background: linear-gradient(#19105b, #472067, #7c3375, #FF6196) !important;
+    position: fixed;
+    height: 100vh;
+    overflow: hidden;
+    width: 186px;
+    color: white;
+    padding: 10px 20px 0px 20px;
+    /* transition: all 2s ease-in-out; */
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top i {
+    font-size: 30px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.top img {
+    width: 20px;
+}
+
+.nav-list button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 12px;
+    text-align: left;
+    padding: 8px;
+    padding-right: 0px;
+}
+
+.nav-bottom {
+    position: inherit;
+    bottom: 0;
+    width: 140px;
+    font-size: 11px;
+}
+
+.nav-bottom hr{
+    height: 3px;
+    border-radius: 90%;
+}
+
+.nav-bottom p {
+    font-size: 11px;
+    font-weight: bolder;
+}
+
+.nav-bottom i {
+    transform: scaleX(-1);
+    font-size: 20px;
+}
