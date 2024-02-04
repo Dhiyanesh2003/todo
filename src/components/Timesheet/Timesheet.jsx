@@ -29,8 +29,6 @@ const Timesheet = ({ nav, open }) => {
   const first = true;
   const notFirst = false;
 
-  const [count, setCount] = useState(1)
-
   const [myData, setMyData] = useState([
     { comment: '', mon: 0, tue: 0, wed: 0, thu: 0, fri: 0, sat: 0, sun: 0 }
   ])
@@ -52,36 +50,40 @@ const Timesheet = ({ nav, open }) => {
   }
 
   useEffect(() => {
-    const monSum = myData.reduce((acc, row) => acc + (parseInt(row.mon) || 0), 0)
+    const monSum = myData.reduce((acc, row) => acc + (parseFloat(row.mon) || 0), 0)
     setTotal((prevD) => ({ ...prevD, ["mon"]: monSum }))
 
-    const tueSum = myData.reduce((acc, row) => acc + (parseInt(row.tue) || 0), 0)
+    const tueSum = myData.reduce((acc, row) => acc + (parseFloat(row.tue) || 0), 0)
     setTotal((prevD) => ({ ...prevD, ["tue"]: tueSum }))
 
-    const wedSum = myData.reduce((acc, row) => acc + (parseInt(row.wed) || 0), 0)
+    const wedSum = myData.reduce((acc, row) => acc + (parseFloat(row.wed) || 0), 0)
     setTotal((prevD) => ({ ...prevD, ["wed"]: wedSum }))
 
-    const thuSum = myData.reduce((acc, row) => acc + (parseInt(row.thu) || 0), 0)
+    const thuSum = myData.reduce((acc, row) => acc + (parseFloat(row.thu) || 0), 0)
     setTotal((prevD) => ({ ...prevD, ["thu"]: thuSum }))
 
-    const friSum = myData.reduce((acc, row) => acc + (parseInt(row.fri) || 0), 0)
+    const friSum = myData.reduce((acc, row) => acc + (parseFloat(row.fri) || 0), 0)
     setTotal((prevD) => ({ ...prevD, ["fri"]: friSum }))
 
-    const satSum = myData.reduce((acc, row) => acc + (parseInt(row.sat) || 0), 0)
+    const satSum = myData.reduce((acc, row) => acc + (parseFloat(row.sat) || 0), 0)
     setTotal((prevD) => ({ ...prevD, ["sat"]: satSum }))
 
-    const sunSum = myData.reduce((acc, row) => acc + (parseInt(row.sun) || 0), 0)
+    const sunSum = myData.reduce((acc, row) => acc + (parseFloat(row.sun) || 0), 0)
     setTotal((prevD) => ({ ...prevD, ["sun"]: sunSum }))
 
   }, [myData])
 
   const onAdd = () => {
-    setCount(count + 1)
+    setMyData((prevD) => [...prevD, { comment: '', mon: 0, tue: 0, wed: 0, thu: 0, fri: 0, sat: 0, sun: 0 }])
   }
 
-  const onSub = () => {
-    setCount(count - 1)
+  const onSub = (index) => {
+    const updatedD = [...myData]
+    updatedD.splice(index, 1)
+    setMyData(updatedD)
   }
+
+
 
   return (
     <div className='timesheet' style={navStyle}>
@@ -126,7 +128,7 @@ const Timesheet = ({ nav, open }) => {
           <tbody>
             {
               myData.map((row, index) => (
-                index == 0 ? (
+                index === 0 ? (
                   <Row
                     onEdit={onEdit}
                     row={row}
@@ -174,7 +176,7 @@ const Timesheet = ({ nav, open }) => {
               <td className={`center ${ total.sun > 8 ? 'red' : '' } `}>
                 {total.sun}
               </td>
-              <td className='center'>{parseInt(total.mon) + parseInt(total.tue) + parseInt(total.wed) + parseInt(total.thu) + parseInt(total.fri) + parseInt(total.sat) + parseInt(total.sun)}</td>
+              <td className='center'>{parseFloat(total.mon) + parseFloat(total.tue) + parseFloat(total.wed) + parseFloat(total.thu) + parseFloat(total.fri) + parseFloat(total.sat) + parseFloat(total.sun)}</td>
               <td></td>
             </tr>
             <tr>
